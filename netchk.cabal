@@ -1,0 +1,156 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 841cac45caa659ad8d5589832a50d8e8787a837e2096aad43e7855f7dacacf22
+
+name:           netchk
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/netchk#readme>
+homepage:       https://github.com/githubuser/netchk#readme
+bug-reports:    https://github.com/githubuser/netchk/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/netchk
+
+library
+  exposed-modules:
+      Bandwidth.Check
+      Bandwidth.Output
+      Bandwidth.Types
+      Config
+      Connection.Check
+      Connection.Output
+      Connection.Types
+      Lib.ProcNet
+  other-modules:
+      Paths_netchk
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , ansi-terminal
+    , asciichart
+    , attoparsec
+    , base >=4.7 && <5
+    , bits
+    , bytestring
+    , connection
+    , dns
+    , extra
+    , gnuplot
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , logging
+    , network
+    , network-simple-tls
+    , optparse-applicative
+    , pcap
+    , pretty-terminal
+    , safe
+    , split
+    , terminal-size
+    , text
+    , time
+    , tls
+    , unix
+    , x509-system
+  default-language: Haskell2010
+
+executable netchk-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_netchk
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , ansi-terminal
+    , asciichart
+    , attoparsec
+    , base >=4.7 && <5
+    , bits
+    , bytestring
+    , connection
+    , dns
+    , extra
+    , gnuplot
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , logging
+    , netchk
+    , network
+    , network-simple-tls
+    , optparse-applicative
+    , pcap
+    , pretty-terminal
+    , safe
+    , split
+    , terminal-size
+    , text
+    , time
+    , tls
+    , unix
+    , x509-system
+  default-language: Haskell2010
+
+test-suite netchk-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_netchk
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , ansi-terminal
+    , asciichart
+    , attoparsec
+    , base >=4.7 && <5
+    , bits
+    , bytestring
+    , connection
+    , dns
+    , extra
+    , gnuplot
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , logging
+    , netchk
+    , network
+    , network-simple-tls
+    , optparse-applicative
+    , pcap
+    , pretty-terminal
+    , safe
+    , split
+    , terminal-size
+    , text
+    , time
+    , tls
+    , unix
+    , x509-system
+  default-language: Haskell2010
