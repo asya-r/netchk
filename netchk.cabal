@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.37.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 841cac45caa659ad8d5589832a50d8e8787a837e2096aad43e7855f7dacacf22
+-- hash: edd0a28b072d275c0962202deb74715fd3197e3613152717aa9dd34c678ad5f4
 
 name:           netchk
 version:        0.1.0.0
@@ -57,6 +57,7 @@ library
     , http-types
     , lens
     , logging
+    , microlens-ghc
     , network
     , network-simple-tls
     , optparse-applicative
@@ -97,6 +98,7 @@ executable netchk-exe
     , http-types
     , lens
     , logging
+    , microlens-ghc
     , netchk
     , network
     , network-simple-tls
@@ -139,6 +141,7 @@ test-suite netchk-test
     , http-types
     , lens
     , logging
+    , microlens-ghc
     , netchk
     , network
     , network-simple-tls

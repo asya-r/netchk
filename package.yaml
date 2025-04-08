@@ -50,6 +50,7 @@ dependencies:
 - bits
 - pcap
 - terminal-size
+- microlens-ghc
 
 library:
   source-dirs: src

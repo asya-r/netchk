@@ -7,7 +7,6 @@ import Lib.ProcNet (SockInfo (..), Addr4(..), readProcNetTcp4)
 
 import qualified Network.Socket.ByteString as NBS
 import qualified Data.ByteString as BS
-import Control.Lens.Internal.ByteString (unpackStrict8)
 import qualified Data.ByteString.Char8 as BS8
 import qualified Network.Socket as S
 import qualified Control.Logging as CL (log, withStdoutLogging)
@@ -23,8 +22,8 @@ import Control.Monad (liftM2)
 import Data.Word (Word16)
 import qualified Network.Pcap as Pcap
 import Control.Exception (bracket)
-import Control.Lens.Internal.ByteString (unpackStrict8)
 import Data.Fixed (showFixed)
+import Lens.Micro.GHC.Internal (unpackStrict8)
 
 measure :: String -> String -> IO Measurement
 measure url interface = do
