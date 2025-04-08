@@ -25,6 +25,6 @@ showResult url = do
   clearFromCursorToLineBeginning
   setCursorColumn 0
   case res of
-    Left _ -> putStrLn $ (color Red "⬤") ++ " \"" ++ url ++ "\": Fail (" ++ (showRes res) ++ ")"
+    Left _ -> putStrLn $ (color Red "⬤") ++ " \"" ++ url ++ "\": " ++ (showRes res)
     Right _ -> putStrLn $ (color Green "⬤") ++ " \"" ++ url ++ "\": " ++ (showRes res)
   return res

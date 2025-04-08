@@ -10,23 +10,23 @@ type Result = Either ResultFailure ResultSuccess
 showRes :: Result -> String
 showRes state = case state of
   Left e -> show e
-  Right _ -> "Success"
+  Right _ -> "Connection is established"
 
 data ResultSuccess = ResultSuccess
 
 data ResultFailure
-  = ResultFailureDNS String
+  = ResultFailureBadURL
+  | ResultFailureDNS String
   | ResultFailureTCP String
   | ResultFailureTLS String
   | ResultFailureHTTP String
-  | ResultFailureBadURL
   | ResultFailureUndefined String
 
 instance Show ResultFailure where
   show s = case s of
-    ResultFailureDNS _ -> "DNS error"
-    ResultFailureTCP _ -> "TCP error"
-    ResultFailureTLS _ -> "TLS error"
-    ResultFailureHTTP n -> "HTTP error, status code was " ++ n
-    ResultFailureBadURL -> "Bad URL"
-    ResultFailureUndefined _ -> "Undefined error"
+    ResultFailureBadURL -> "Couldn't parse the given address"
+    ResultFailureDNS _ -> "Configured DNS couldn't resolve the address"
+    ResultFailureTCP _ -> "TCP handshake failed"
+    ResultFailureTLS _ -> "TLS handshake failed"
+    ResultFailureHTTP n -> "HTTP error, the status code is " ++ n
+    ResultFailureUndefined _ -> "Connection failed, the problem is unknown"
